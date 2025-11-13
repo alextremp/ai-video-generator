@@ -8,7 +8,7 @@ import argparse
 import subprocess
 from datetime import timedelta
 import whisper
-from moviepy.editor import VideoFileClip, CompositeVideoClip, TextClip
+from moviepy import VideoFileClip, CompositeVideoClip, TextClip
 from moviepy.video.tools.subtitles import SubtitlesClip
 import string
 import random
