@@ -171,8 +171,10 @@ func runAutocap(videoPath string) (string, error) {
 
 func executeCommand(name string, args []string) error {
 	cmd := exec.Command(name, args...)
-	if _, err := cmd.CombinedOutput(); err != nil {
+	output, err := cmd.CombinedOutput()
+	if err != nil {
 		log.Printf("Error executing command %s: %v", name, err)
+		log.Printf("Command output: %s", string(output))
 		return err
 	}
 	return nil
